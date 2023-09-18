@@ -96,8 +96,11 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     - the treasure index will be randomly created using the Math.floor() and Math.random()
     - use setter function and spread operator as reference on the tree emoji usr story
 
+***Additional Notes***
+- Because the Math operators will create a new number each time a square is clicked, we will store the the value as a state variable `treasure`
 
 - If I select the losing square, the question mark will become a bomb emoji.
+
 
 - As a user, I can click on a “Play Again” button that will restart the game.
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.

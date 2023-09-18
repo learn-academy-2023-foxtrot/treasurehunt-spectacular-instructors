@@ -15,13 +15,15 @@ const App = () => {
     "?"
   ])
 
+  const [treasure, setTreasure] = useState()
+
   const handleClick = (selectedIndex) => {
     // return something
 
     // treasure location
     let treasureIndex = Math.floor(Math.random() * board.length)
     console.log("treasure", treasureIndex)
-    if(treasureIndex === 6) {
+    if(treasureIndex === selectedIndex) {
       board[selectedIndex]="☀️"
       setBoard([...board])
     } else {
