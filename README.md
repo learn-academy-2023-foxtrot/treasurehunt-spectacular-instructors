@@ -81,8 +81,19 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
   - perform function call through an onClick attribute placed on each square on Square.js
   - the argument will be the index of that square (functional props)
 
+- branch name: emoji
+
 - As a user, when I click on one of the question marks, a tree emoji appears instead of the alert.
+- Pseudode: (continuation of process on handleClick)
+ - reference the selected square using its index and reassign the value
+ - use the setter function `setBoard` to update the value of the state variable `board` by using the spread operator `...` to copy the values
+ - Because it only copies values, we will encapsulate the spread operator with `[]` to create an array
+ - emoji: 🏖️ will be used for default emoji
+
+
+
 - As a user, if I select the winning square, the question mark will become a treasure emoji. If I select the losing square, the question mark will become a bomb emoji.
+
 - As a user, I can click on a “Play Again” button that will restart the game.
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.
