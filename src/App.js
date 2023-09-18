@@ -17,8 +17,17 @@ const App = () => {
 
   const handleClick = (selectedIndex) => {
     // return something
+
+    // treasure location
+    let treasureIndex = Math.floor(Math.random() * board.length)
+    console.log("treasure", treasureIndex)
+    if(treasureIndex === 6) {
+      board[selectedIndex]="☀️"
+      setBoard([...board])
+    } else {
     board[selectedIndex]="🏖️"
     setBoard([...board])
+    }
   }
 
   return (
