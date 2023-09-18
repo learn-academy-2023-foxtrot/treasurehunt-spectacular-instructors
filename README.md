@@ -51,16 +51,16 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 - Look at the tools that are provided, components
 - console.log()
 
+#### branch name: grid
 - As a user, I can see a page with a three by three grid board game with a question mark in each square.
-  - branch name: grid
   - imported the Square component
   - passed board as props to the Square component
   - Since board is an array, use .map() to iterate across each value in the array and return the value inside a square.
   - increase the font size and center it on App.css
   - use flexbox to create a 3X3 grid
 
+#### branch name: alert
 - As a user, when I click on one of the question marks, an alert appears with the index position of that question mark in the array.
-- branch name: alert
 - create a function that will send an alert message with the index position of that question mark in the array
 - Pseudocode:
   - function name: handleClick
@@ -81,8 +81,7 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
   - perform function call through an onClick attribute placed on each square on Square.js
   - the argument will be the index of that square (functional props)
 
-- branch name: emoji
-
+#### branch name: emoji
 - As a user, when I click on one of the question marks, a tree emoji appears instead of the alert.
   - Pseudode: (continuation of process on handleClick)
   - reference the selected square using its index and reassign the value
@@ -97,6 +96,7 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     - use setter function and spread operator as reference on the tree emoji user story
 
 ***Additional Notes***
+#### branch name: emoji
 - Because the Math operators will create a new number each time a square is clicked, we will store the the value as a state variable `treasure`
 ```js
   const [treasure, setTreasure] = useState("")
@@ -107,8 +107,9 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 
     // treasure location
     let treasureIndex = Math.floor(Math.random() * board.length)
-    // console.log("treasure", treasureIndex)
-    // setTreasure(treasureIndex) 
+    console.log("treasure", treasureIndex)
+    setTreasure(treasureIndex) 
+
     if(treasureIndex === selectedIndex) {
       board[selectedIndex]="☀️"
       setBoard([...board])
@@ -120,14 +121,16 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
 ```
 > - This idea has the same impact as just having the treasureIndex, redundant code, therefore, removing it. 
 
+
 - If I select the losing square, the question mark will become a bomb emoji.
  - Pseudocode: (continuation of process on handleClick)
  - use conditional statement to provide a 🌧️ for the bomb
     - the bomb index will be randomly created using the Math.floor() and Math.random()
     - if bomb index and treasure index are the same then return the 🌧️ emoji
     - this condition is the most stringent therefore should be the first condition
-    - use setter function and spread operator as reference on the tree emoji user story
+    - use setter function and spread operator as reference on the tree emoji user story  
 
+***Incomplete work***
 - As a user, I can click on a “Play Again” button that will restart the game.
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.
