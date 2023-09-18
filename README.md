@@ -60,6 +60,27 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
   - use flexbox to create a 3X3 grid
 
 - As a user, when I click on one of the question marks, an alert appears with the index position of that question mark in the array.
+- branch name: alert
+- create a function that will send an alert message with the index position of that question mark in the array
+- Pseudocode:
+  - function name: handleClick
+  - input: index (number), selectedIndex
+  - output: index (number)
+  - process: use alert() to show the index of the selected square
+  - place function on App.js, the container component
+
+  - function expression
+  ```js
+    const handleClick = (selectedIndex) => {
+      // return something
+      alert(selectedIndex)
+    }
+  ```
+
+  - function call
+  - perform function call through an onClick attribute placed on each square on Square.js
+  - the argument will be the index of that square (functional props)
+
 - As a user, when I click on one of the question marks, a tree emoji appears instead of the alert.
 - As a user, if I select the winning square, the question mark will become a treasure emoji. If I select the losing square, the question mark will become a bomb emoji.
 - As a user, I can click on a “Play Again” button that will restart the game.

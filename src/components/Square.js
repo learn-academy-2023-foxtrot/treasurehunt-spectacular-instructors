@@ -1,6 +1,6 @@
 import React from "react"
 
-const Square = ( {board} ) => {
+const Square = ( {board, handleClick} ) => {
   // Two options to reference props
   // console.log("props", props.board) // when using props as the parameter, it requires dot notation to obtain a specific key
 
@@ -14,7 +14,11 @@ const Square = ( {board} ) => {
       <div className="grid">
         {board.map((square, index) => {
           return(
-            <div className="square" key={index}>
+            <div 
+              className="square" 
+              key={index}
+              onClick={() => handleClick(index)}
+            >
               {square}
             </div>
           )
