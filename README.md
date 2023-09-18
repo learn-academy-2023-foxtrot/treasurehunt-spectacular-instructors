@@ -94,13 +94,39 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
   - Pseudocode: (continuation of process on handleClick)
     - use conditional statements to provide a ☀️ for the treasure, 🏖️ will be used for default emoji
     - the treasure index will be randomly created using the Math.floor() and Math.random()
-    - use setter function and spread operator as reference on the tree emoji usr story
+    - use setter function and spread operator as reference on the tree emoji user story
 
 ***Additional Notes***
 - Because the Math operators will create a new number each time a square is clicked, we will store the the value as a state variable `treasure`
+```js
+  const [treasure, setTreasure] = useState("")
+  console.log("treasure", treasure)
+
+  const handleClick = (selectedIndex) => {
+    // return something
+
+    // treasure location
+    let treasureIndex = Math.floor(Math.random() * board.length)
+    // console.log("treasure", treasureIndex)
+    // setTreasure(treasureIndex) 
+    if(treasureIndex === selectedIndex) {
+      board[selectedIndex]="☀️"
+      setBoard([...board])
+    } else {
+    board[selectedIndex]="🏖️"
+    setBoard([...board])
+    }
+  }
+```
+> - This idea has the same impact as just having the treasureIndex, redundant code, therefore, removing it. 
 
 - If I select the losing square, the question mark will become a bomb emoji.
-
+ - Pseudocode: (continuation of process on handleClick)
+ - use conditional statement to provide a 🌧️ for the bomb
+    - the bomb index will be randomly created using the Math.floor() and Math.random()
+    - if bomb index and treasure index are the same then return the 🌧️ emoji
+    - this condition is the most stringent therefore should be the first condition
+    - use setter function and spread operator as reference on the tree emoji user story
 
 - As a user, I can click on a “Play Again” button that will restart the game.
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
