@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Square from "./components/Square"
 import "./App.css"
+import NewGame from "./components/NewGame"
 
 const App = () => {
   const [board, setBoard] = useState([
@@ -37,10 +38,15 @@ const handleClick = (selectedIndex) => {
     }
   }
 
+  const reStart = () => {
+    setBoard(Array(9).fill("?"))
+  } 
+  
   return (
     <>
       <h1>Treasure Hunt Game</h1>
       <Square board={board} handleClick={handleClick}/>
+      <NewGame reStart={reStart}/>
     </>
   )
 }

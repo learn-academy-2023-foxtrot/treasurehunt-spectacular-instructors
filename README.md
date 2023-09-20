@@ -95,8 +95,11 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     - the treasure index will be randomly created using the Math.floor() and Math.random()
     - use setter function and spread operator as reference on the tree emoji user story
 
-***Additional Notes***
-#### branch name: emoji
+## Additional Notes
+
+***
+Testing out a theory of maintaining the treasure location in react state.
+***
 - Because the Math operators will create a new number each time a square is clicked, we will store the the value as a state variable `treasure`
 ```js
   const [treasure, setTreasure] = useState("")
@@ -120,8 +123,9 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
   }
 ```
 > - This idea has the same impact as just having the treasureIndex, redundant code, therefore, removing it. 
+***
 
-
+#### branch name: emoji
 - If I select the losing square, the question mark will become a bomb emoji.
  - Pseudocode: (continuation of process on handleClick)
  - use conditional statement to provide a 🌧️ for the bomb
@@ -130,11 +134,35 @@ As a developer, you are tasked with creating a treasure hunt game. The user will
     - this condition is the most stringent therefore should be the first condition
     - use setter function and spread operator as reference on the tree emoji user story  
 
-***Incomplete work***
+#### branch name: restart
 - As a user, I can click on a “Play Again” button that will restart the game.
+- create a function that will execute the setter function to update the values inside the array to be a `?`
+- Pseudocode:
+  - function name: reStart
+  - input: none
+  - output: array with ? as values
+  - process: use Array operator with fill method to create an array with 9 values that are `?`
+  - place function on App.js, the container component
+```js
+  const reStart = () => {
+    setBoard(Array(9).fill("?"))
+  } 
+```
+- Function call:
+  - create NewGame presentational component
+  - import on App.js
+  - pass reStart() function as props to NewGame component call
+  - onClick attribute on a button will invoke the function
+  - adding styling for button on App.css
+
+#### branch name: counter
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
+
+#### branch name: message
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.
 - As a user, I can see a message stating that I lost the game by selecting the square that contains the bomb.
+
+#### branch name: game-over
 - As a user, I cannot continue to play the game after I win or lose.
 - As a user, I can see a message informing me that I lost the game when I run out of turns (the counter reaches zero).
 

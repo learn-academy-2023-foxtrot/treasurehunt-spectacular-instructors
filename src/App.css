@@ -1,5 +1,9 @@
-h1 {
+body {
+  background-color: blue;
+}
+h1, button {
   text-align: center;
+  font-size: 6rem;
 }
 
 .square {
@@ -7,7 +11,12 @@ h1 {
   width: 200px;
   border: 1px solid black;
   font-size: 10rem;
-  text-align: center
+  text-align: center;
+  background-color: rgb(197, 219, 238);
+}
+
+button {
+  background-color: rgb(197, 219, 238);
 }
 
 .grid {
@@ -15,4 +24,16 @@ h1 {
   flex-wrap: wrap;
   width: 610px;
   margin: 0 auto
+}
+
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
 }
