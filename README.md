@@ -157,6 +157,11 @@ Testing out a theory of maintaining the treasure location in react state.
 
 #### branch name: counter
 - As a user, I can see a counter that shows how many guesses are remaining. The counter starts at five and decrements by one every time I click on a square that is neither the treasure nor the bomb.
+- create a state variable to store the counter
+- pass counter as props to NewGame
+- Pseudocode: (continuation of handleClick)
+  - (App.js) execute setter function to update value of counter variable by subtracting one
+  - (NewGame.js) use conditional rendering based on the value being greater or less than 0
 
 #### branch name: message
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.

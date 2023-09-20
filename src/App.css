@@ -1,9 +1,9 @@
 body {
   background-color: blue;
 }
-h1, button {
+h1, h2, h3, button {
   text-align: center;
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .square {
@@ -30,7 +30,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem;
 }
 
 button:hover {

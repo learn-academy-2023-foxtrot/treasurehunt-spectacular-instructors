@@ -16,37 +16,43 @@ const App = () => {
     "?"
   ])
 
-const handleClick = (selectedIndex) => {
+  const [counter, setCounter] = useState(5)
+
+  const handleClick = (selectedIndex) => {
     // return something
 
     // treasure location
     let treasureIndex = Math.floor(Math.random() * board.length)
     let bombIndex = Math.floor(Math.random() * board.length)
 
-    if(bombIndex === treasureIndex) {
-      board[selectedIndex]="🌧️"
+    setCounter(counter-1)
+    
+    if(counter > 0) {
+      if(bombIndex === treasureIndex) {
+        board[selectedIndex]="🌧️"
+        setBoard([...board])
+      } else if(treasureIndex === selectedIndex) {
+        board[selectedIndex]="☀️"
+        setBoard([...board])
+      } else if(bombIndex === selectedIndex) {
+        board[selectedIndex]="🌧️"
+        setBoard([...board])
+      } else {
+      board[selectedIndex]="🏖️"
       setBoard([...board])
-    } else if(treasureIndex === selectedIndex) {
-      board[selectedIndex]="☀️"
-      setBoard([...board])
-    } else if(bombIndex === selectedIndex) {
-      board[selectedIndex]="🌧️"
-      setBoard([...board])
-    } else {
-    board[selectedIndex]="🏖️"
-    setBoard([...board])
+      }
     }
   }
 
   const reStart = () => {
     setBoard(Array(9).fill("?"))
   } 
-  
+
   return (
     <>
       <h1>Treasure Hunt Game</h1>
       <Square board={board} handleClick={handleClick}/>
-      <NewGame reStart={reStart}/>
+      <NewGame reStart={reStart} counter={counter}/>
     </>
   )
 }
