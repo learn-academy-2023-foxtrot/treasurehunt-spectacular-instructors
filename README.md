@@ -142,10 +142,13 @@ Testing out a theory of maintaining the treasure location in react state.
   - input: none
   - output: array with ? as values
   - process: use Array operator with fill method to create an array with 9 values that are `?`
+  - use setter function to update values for the board and counter
   - place function on App.js, the container component
+- Function expression
 ```js
   const reStart = () => {
     setBoard(Array(9).fill("?"))
+    setCounter(5)
   } 
 ```
 - Function call:
@@ -167,8 +170,13 @@ Testing out a theory of maintaining the treasure location in react state.
 - As a user, I can see a message stating that I won the game by selecting the square that contains the treasure.
 - As a user, I can see a message stating that I lost the game by selecting the square that contains the bomb.
 
+- (NewGame.js) conditional rendering using the include method to see if the treasure or bomb emoji is in the array and return a message
+
 #### branch name: game-over
 - As a user, I cannot continue to play the game after I win or lose.
+- Pseudocode: (continuation of handleClick)
+  - add conditions that check to see if the array contains the winning or losing emoji
+
 - As a user, I can see a message informing me that I lost the game when I run out of turns (the counter reaches zero).
 
 ### 🏔 Stretch Goals

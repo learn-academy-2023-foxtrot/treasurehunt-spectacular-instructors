@@ -26,7 +26,7 @@ const App = () => {
     let bombIndex = Math.floor(Math.random() * board.length)
 
     setCounter(counter-1)
-    
+
     if(counter > 0) {
       if(bombIndex === treasureIndex) {
         board[selectedIndex]="🌧️"
@@ -46,13 +46,14 @@ const App = () => {
 
   const reStart = () => {
     setBoard(Array(9).fill("?"))
+    setCounter(5)
   } 
 
   return (
     <>
       <h1>Treasure Hunt Game</h1>
       <Square board={board} handleClick={handleClick}/>
-      <NewGame reStart={reStart} counter={counter}/>
+      <NewGame reStart={reStart} counter={counter} board={board}/>
     </>
   )
 }
